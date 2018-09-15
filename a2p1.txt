@@ -1,0 +1,121 @@
+Script started on Tue Oct 13 17:53:41 2015
+sh-3.00$ /usr/local/bin/gdb a2p1
+[?1034hGNU gdb 6.8
+Copyright (C) 2008 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "sparc-sun-solaris2.10"...
+(no debugging symbols found)
+(gdb) b main
+Breakpoint 1 at 0x10690
+(gdb) display/ i$pci[1P[1P[1@i[1@ 
+(gdb) run
+Starting program: /home/ugc/mjtang/Desktop/a2p1 
+(no debugging symbols found)
+(no debugging symbols found)
+
+Breakpoint 1, 0x00010690 in main ()
+1: x/i $pc
+0x10690 <main+4>:       mov  -1, %l0
+(gdb) ni
+0x00010694 in main ()
+1: x/i $pc
+0x10694 <main+8>:       sethi  %hi(0xaaaa8c00), %l4
+(gdb) ni
+0x00010698 in main ()
+1: x/i $pc
+0x10698 <main+12>:      or  %l4, 1, %l4 ! 0xaaaa8c01
+(gdb) ni
+0x0001069c in main ()
+1: x/i $pc
+0x1069c <main+16>:      sethi  %hi(0xff001000), %l5
+(gdb) ni
+0x000106a0 in main ()
+1: x/i $pc
+0x106a0 <main+20>:      or  %l5, 0x234, %l5     ! 0xff001234
+(gdb) ni
+0x000106a4 in main ()
+1: x/i $pc
+0x106a4 <main+24>:      sethi  %hi(0x13579800), %l6
+(gdb) ni
+0x000106a8 in main ()
+1: x/i $pc
+0x106a8 <main+28>:      or  %l6, 0x3df, %l6     ! 0x13579bdf
+(gdb) ni
+0x000106ac in main ()
+1: x/i $pc
+0x106ac <main+32>:      sethi  %hi(0xc8b4ac00), %l7
+(gdb) ni
+0x000106b0 in main ()
+1: x/i $pc
+0x106b0 <main+36>:      or  %l7, 0x232, %l7     ! 0xc8b4ae32
+(gdb) ni
+0x000106b4 in main ()
+1: x/i $pc
+0x106b4 <main+40>:      sethi  %hi(0x8000), %g2
+(gdb) p $l4
+$1 = -1431663615
+(gdb) p $l5
+$2 = -16772556
+(gdb) p $l6
+$3 = 324508639
+(gdb) p $l7
+$4 = -927683022
+(gdb) ni
+0x000106b8 in main ()
+1: x/i $pc
+0x106b8 <main+44>:      mov  0x20, %g3
+(gdb) ni
+0x000106bc in main ()
+1: x/i $pc
+0x106bc <main+48>:      mov  4, %g4
+(gdb) ni
+0x000106c0 in main ()
+1: x/i $pc
+0x106c0 <main+52>:      sethi  %hi(0x80000000), %g5
+(gdb) ni
+0x000106c4 in main ()
+1: x/i $pc
+0x106c4 <main+56>:      mov  %l4, %l3
+(gdb) ni
+0x000106c8 in main ()
+1: x/i $pc
+0x106c8 <main+60>:      sethi  %hi(0xfc00), %o0
+(gdb) ni
+0x000106cc in main ()
+1: x/i $pc
+0x106cc <main+64>:      or  %o0, 0x3ff, %o0     ! 0xffff
+(gdb) ni
+0x000106d0 in main ()
+1: x/i $pc
+0x106d0 <main+68>:      and  %o0, %l0, %o1
+(gdb) ni
+0x000106d4 in main ()
+1: x/i $pc
+0x106d4 <main+72>:      sethi  %hi(0x10400), %o0
+(gdb) ni
+0x000106d8 in main ()
+1: x/i $pc
+0x106d8 <main+76>:      or  %o0, 0x270, %o0     ! 0x10670 <fmt>
+(gdb) ni
+0x000106dc in main ()
+1: x/i $pc
+0x106dc <main+80>:      call  0x20924 <printf@plt>
+0x106e0 <main+84>:      nop 
+(gdb) ni
+0x000106e0 in main ()
+1: x/i $pc
+0x106e0 <main+84>:      nop 
+(gdb) ni
+(no debugging symbols found)
+The current checksum is ffff
+The current checksum is 756e
+
+Program exited with code 035.
+(gdb) q
+sh-3.00$ exit
+exit
+
+script done on Tue Oct 13 17:55:44 2015

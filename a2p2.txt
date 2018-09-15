@@ -1,0 +1,280 @@
+Script started on Tue Oct 13 17:49:11 2015
+sh-3.00$ /usr/loa cal/bin/gdb a2p2
+[?1034hGNU gdb 6.8
+Copyright (C) 2008 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "sparc-sun-solaris2.10"...
+(no debugging symbols found)
+(gdb) b main
+Breakpoint 1 at 0x10698
+(gdb) display/i $pc
+(gdb) run
+Starting program: /home/ugc/mjtang/Desktop/a2p2 
+(no debugging symbols found)
+(no debugging symbols found)
+
+Breakpoint 1, 0x00010698 in main ()
+1: x/i $pc
+0x10698 <main+4>:       clr  %l0
+(gdb) ni
+0x0001069c in main ()
+1: x/i $pc
+0x1069c <main+8>:       sethi  %hi(0x4ee6400), %l1
+(gdb) ni
+0x000106a0 in main ()
+1: x/i $pc
+0x106a0 <main+12>:      or  %l1, 0x3b7, %l1     ! 0x4ee67b7
+(gdb) ni
+0x000106a4 in main ()
+1: x/i $pc
+0x106a4 <main+16>:      sethi  %hi(0x72e8800), %l2
+(gdb) ni
+0x000106a8 in main ()
+1: x/i $pc
+0x106a8 <main+20>:      or  %l2, 0x38c, %l2     ! 0x72e8b8c
+(gdb) ni
+0x000106ac in main ()
+1: x/i $pc
+0x106ac <main+24>:      sethi  %hi(0x80000000), %g3
+(gdb) ni
+0x000106b0 in main ()
+1: x/i $pc
+0x106b0 <main+28>:      clr  %l3
+(gdb) p $l2
+$1 = 120490892
+(gdb) p $l1
+$2 = 82732983
+(gdb) ni
+0x000106b4 in guard ()
+1: x/i $pc
+0x106b4 <guard>:        cmp  %l3, 0x20
+(gdb) ni
+0x000106b8 in guard ()
+1: x/i $pc
+0x106b8 <guard+4>:      bl  0x106e0 <step1>
+0x106bc <guard+8>:      nop 
+(gdb) ni
+0x000106bc in guard ()
+1: x/i $pc
+0x106bc <guard+8>:      nop 
+(gdb) ni
+0x000106e0 in step1 ()
+1: x/i $pc
+0x106e0 <step1>:        and  %l2, %g3, %l3
+(gdb) ni
+0x000106e4 in step1 ()
+1: x/i $pc
+0x106e4 <step1+4>:      cmp  %l3, 0
+(gdb) ni
+0x000106e8 in step1 ()
+1: x/i $pc
+0x106e8 <step1+8>:      be  0x106fc <step2>
+0x106ec <step1+12>:     nop 
+(gdb) ni
+0x000106ec in step1 ()
+1: x/i $pc
+0x106ec <step1+12>:     nop 
+(gdb) ni
+0x000106fc in step2 ()
+1: x/i $pc
+0x106fc <step2>:        and  %l0, 1, %l5
+(gdb) ni
+0x00010700 in step2 ()
+1: x/i $pc
+0x10700 <step2+4>:      sra  %l0, 1, %l0
+(gdb) ni
+0x00010704 in step2 ()
+1: x/i $pc
+0x10704 <step2+8>:      sra  %l2, 1, %l2
+(gdb) ni
+0x00010708 in step2 ()
+1: x/i $pc
+0x10708 <step2+12>:     and  %l2, %g3, %l4
+(gdb) ni
+0x0001070c in step2 ()
+1: x/i $pc
+0x1070c <step2+16>:     sll  %l5, 0x1f, %l5
+(gdb) ni
+0x00010710 in step2 ()
+1: x/i $pc
+0x10710 <step2+20>:     inc  %g3
+(gdb) ni
+0x00010714 in step2 ()
+1: x/i $pc
+0x10714 <step2+24>:     cmp  %l5, %l4
+(gdb) ni
+0x00010718 in step2 ()
+1: x/i $pc
+0x10718 <step2+28>:     be  0x106b4 <guard>
+0x1071c <step2+32>:     nop 
+(gdb) ni
+0x0001071c in step2 ()
+1: x/i $pc
+0x1071c <step2+32>:     nop 
+(gdb) ni
+0x000106b4 in guard ()
+1: x/i $pc
+0x106b4 <guard>:        cmp  %l3, 0x20
+(gdb) ni
+0x000106b8 in guard ()
+1: x/i $pc
+0x106b8 <guard+4>:      bl  0x106e0 <step1>
+0x106bc <guard+8>:      nop 
+(gdb) ni
+0x000106bc in guard ()
+1: x/i $pc
+0x106bc <guard+8>:      nop 
+(gdb) ni
+0x000106e0 in step1 ()
+1: x/i $pc
+0x106e0 <step1>:        and  %l2, %g3, %l3
+(gdb) ni
+0x000106e4 in step1 ()
+1: x/i $pc
+0x106e4 <step1+4>:      cmp  %l3, 0
+(gdb) ni
+0x000106e8 in step1 ()
+1: x/i $pc
+0x106e8 <step1+8>:      be  0x106fc <step2>
+0x106ec <step1+12>:     nop 
+(gdb) ni
+0x000106ec in step1 ()
+1: x/i $pc
+0x106ec <step1+12>:     nop 
+(gdb) ni
+0x000106fc in step2 ()
+1: x/i $pc
+0x106fc <step2>:        and  %l0, 1, %l5
+(gdb) ni
+0x00010700 in step2 ()
+1: x/i $pc
+0x10700 <step2+4>:      sra  %l0, 1, %l0
+(gdb) ni
+0x00010704 in step2 ()
+1: x/i $pc
+0x10704 <step2+8>:      sra  %l2, 1, %l2
+(gdb) ni
+0x00010708 in step2 ()
+1: x/i $pc
+0x10708 <step2+12>:     and  %l2, %g3, %l4
+(gdb) ni
+0x0001070c in step2 ()
+1: x/i $pc
+0x1070c <step2+16>:     sll  %l5, 0x1f, %l5
+(gdb) ni
+0x00010710 in step2 ()
+1: x/i $pc
+0x10710 <step2+20>:     inc  %g3
+(gdb) ni
+0x00010714 in step2 ()
+1: x/i $pc
+0x10714 <step2+24>:     cmp  %l5, %l4
+(gdb) ni
+0x00010718 in step2 ()
+1: x/i $pc
+0x10718 <step2+28>:     be  0x106b4 <guard>
+0x1071c <step2+32>:     nop 
+(gdb) ni
+0x0001071c in step2 ()
+1: x/i $pc
+0x1071c <step2+32>:     nop 
+(gdb) ni
+0x00010720 in step2 ()
+1: x/i $pc
+0x10720 <step2+36>:     xor  %l2, %g3, %l2
+(gdb) ni
+0x00010724 in step2 ()
+1: x/i $pc
+0x10724 <step2+40>:     b  0x106b4 <guard>
+0x10728 <step2+44>:     nop 
+(gdb) ni
+0x00010728 in step2 ()
+1: x/i $pc
+0x10728 <step2+44>:     nop 
+(gdb) ni
+0x000106b4 in guard ()
+1: x/i $pc
+0x106b4 <guard>:        cmp  %l3, 0x20
+(gdb) ni
+0x000106b8 in guard ()
+1: x/i $pc
+0x106b8 <guard+4>:      bl  0x106e0 <step1>
+0x106bc <guard+8>:      nop 
+(gdb) ni
+0x000106bc in guard ()
+1: x/i $pc
+0x106bc <guard+8>:      nop 
+(gdb) ni
+0x000106e0 in step1 ()
+1: x/i $pc
+0x106e0 <step1>:        and  %l2, %g3, %l3
+(gdb) ni
+0x000106e4 in step1 ()
+1: x/i $pc
+0x106e4 <step1+4>:      cmp  %l3, 0
+(gdb) ni
+0x000106e8 in step1 ()
+1: x/i $pc
+0x106e8 <step1+8>:      be  0x106fc <step2>
+0x106ec <step1+12>:     nop 
+(gdb) ni
+0x000106ec in step1 ()
+1: x/i $pc
+0x106ec <step1+12>:     nop 
+(gdb) ni
+0x000106f0 in step1 ()
+1: x/i $pc
+0x106f0 <step1+16>:     add  %l1, %l0, %l0
+(gdb) ni
+0x000106f4 in step1 ()
+1: x/i $pc
+0x106f4 <step1+20>:     b  0x106fc <step2>
+0x106f8 <step1+24>:     nop 
+(gdb) ni
+0x000106f8 in step1 ()
+1: x/i $pc
+0x106f8 <step1+24>:     nop 
+(gdb) ni
+0x000106fc in step2 ()
+1: x/i $pc
+0x106fc <step2>:        and  %l0, 1, %l5
+(gdb) ni
+0x00010700 in step2 ()
+1: x/i $pc
+0x10700 <step2+4>:      sra  %l0, 1, %l0
+(gdb) ni
+0x00010704 in step2 ()
+1: x/i $pc
+0x10704 <step2+8>:      sra  %l2, 1, %l2
+(gdb) ni
+0x00010708 in step2 ()
+1: x/i $pc
+0x10708 <step2+12>:     and  %l2, %g3, %l4
+(gdb) ni
+0x0001070c in step2 ()
+1: x/i $pc
+0x1070c <step2+16>:     sll  %l5, 0x1f, %l5
+(gdb) ni
+0x00010710 in step2 ()
+1: x/i $pc
+0x10710 <step2+20>:     inc  %g3
+(gdb) ni
+0x00010714 in step2 ()
+1: x/i $pc
+0x10714 <step2+24>:     cmp  %l5, %l4
+(gdb) ni
+0x00010718 in step2 ()
+1: x/i $pc
+0x10718 <step2+28>:     be  0x106b4 <guard>
+0x1071c <step2+32>:     nop 
+(gdb) exit
+Undefined command: "exit".  Try "help".
+(gdb) q
+The program is running.  Exit anyway? (y or n) y
+sh-3.00$ exit
+exit
+
+script done on Tue Oct 13 17:53:28 2015
